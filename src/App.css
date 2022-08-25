@@ -6,9 +6,21 @@ header{
   justify-content: center;
   background-color: black;
 }
-p{
+h1{
   font-family: 'Cinzel', serif;
   color: #c90;
   font-weight: 900;
   font-size: xx-large;
+}
+nav{
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+}
+a{
+  text-decoration: none;
+  color: #c90;
+  font-family: 'Cinzel', serif;
+  font-weight: 900;
+  margin-bottom: 10px;
 }
