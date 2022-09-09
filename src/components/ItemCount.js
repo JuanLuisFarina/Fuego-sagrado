@@ -18,8 +18,8 @@ const ItemCount = ({stock = 4}) => {
 
     return(
         <>
-        <div>
-        <button className="suma" onClick={increment}>+</button>
+        <div className="button">
+        <button onClick={increment}>+</button>
         <p>{unit} Unidades</p>
         <button onClick={decrement}>-</button>
         </div>

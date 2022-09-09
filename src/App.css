@@ -24,3 +24,27 @@ a{
   font-weight: 900;
   margin-bottom: 10px;
 }
+.Item{
+  font-family: 'Cinzel', serif;
+  color: #c90;
+  background-color: #333333;
+  /* margin-top: 200px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button{
+  display: flex;
+  flex-direction: row;
+}
+/* .button button{
+  hei
+} */
+button{
+  font-family: 'Cinzel', serif;
+  background-color: #333333;
+  color: #c90;
+  border: none;
+  font-size: large;
+}
