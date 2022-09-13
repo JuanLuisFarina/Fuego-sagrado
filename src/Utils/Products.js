@@ -5,6 +5,7 @@ const dataFromDB = [
         description: "Cuchillo de 20CM producido con material de disco de arado. Cabo de madera con detalles de acero inoxidable.",
         price: "$5000ars",
         stock: 4,
+        id: 1,
     },
     {
         name: "Delantal de cocina",
@@ -12,6 +13,7 @@ const dataFromDB = [
         description: "Distintos diseño de estampa. Confeccionadoa en jean y cuero. Regulable a la altura del cuello y la cintura.",
         price: "$4000ars",
         stock: 4,
+        id:2,
     },
     {
         name: "Provoletera",
@@ -19,6 +21,7 @@ const dataFromDB = [
         description: "Provoleteras de aluminio. Disponibles en su version con mango o con base de madera",
         price: "$3500ars",
         stock: 4,
+        id:3,
     },
     {
         name: "Sacacorchos",
@@ -26,6 +29,7 @@ const dataFromDB = [
         description: "Sacacorchos de laminas ideal para vinos añejos.",
         price: "$2000ars",
         stock: 4,
+        id:4,
     },
 ];
 

@@ -16,7 +16,8 @@ const ItemListContainer = () => {
             <>
                 {
                 data.map(product => (
-                    <Item 
+                    <Item
+                    key={product.id}
                     name={product.name}
                     img={product.img}
                     description={product.description}
