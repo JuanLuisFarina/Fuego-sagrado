@@ -1,4 +1,4 @@
-const Products = [
+const dataFromDB = [
     {
         name: "Cuchillo Bowie",
         img: '../assets/Cuchillo_Bowie.jpeg',
@@ -28,6 +28,5 @@ const Products = [
         stock: 4,
     },
 ];
-module.exports = {
-    Products,
-    }
+
+export default dataFromDB;
