@@ -20,9 +20,7 @@ const ItemListContainer = () => {
                     key={product.id}
                     name={product.name}
                     img={product.img}
-                    description={product.description}
                     price={product.price}
-                    stock={product.stock}
                     />              
                     ))
                 } 
