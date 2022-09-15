@@ -23,7 +23,8 @@ const ItemListContainer = () => {
                     price={product.price}
                     />              
                     ))
-                } 
+                }
+                <button><link to='/item/{product.ID}'>Detalles</link></button>
             </>
         )    
 }

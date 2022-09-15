@@ -3,26 +3,33 @@
     import dataFromDB from "../Utils/Products";
     import CustomFetch from "../Utils/CustomFetch";
     import ItemDetail from "../components/ItemDetail";
+    import { useParams } from "react-router";
     
     
     const ItemDetailContainer = () => {
         const [data, setData] = useState([]);
+        const { idItem } = useParams();
+
         useEffect(() => {
-        CustomFetch(2000, dataFromDB)
-            .then((dataFromDB) => setData(dataFromDB))
-            .catch((err) => console.log(err));
+            CustomFetch(2000, dataFromDB.find(item => item.id === parseInt(idItem)))
+                .then(result => setData(result))
+                .catch(err => console.log(err))
         }, []);
     
             return (
                 <>
+                {
+                data.map(data => (
                     <ItemDetail
-                            key={product.id}
-                            name={product.name}
-                            img={product.img}
-                            description={product.description}
-                            price={product.price}
-                            stock={product.stock} 
-                        />                                                                               
+                            key={data.id}
+                            name={data.name}
+                            img={data.img}
+                            description={data.description}
+                            price={data.price}
+                            stock={data.stock} 
+                        />  
+                    ))
+                    }
                     <ItemCount />   
                 </>
             )    
