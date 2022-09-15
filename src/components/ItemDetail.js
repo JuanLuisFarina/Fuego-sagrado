@@ -9,7 +9,7 @@ const ItemDetail = (props) =>{
         <p>{props.description}</p>
         <strong>{props.price}</strong>
         <p>Stock: {props.stock}</p>
-        <ItemCount stock={props.stock} />
+        <ItemCount />
         </div>
     );
 }
