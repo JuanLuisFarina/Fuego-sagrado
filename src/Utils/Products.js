@@ -4,8 +4,9 @@ const dataFromDB = [
         img: ['../assets/Cuchillo_Bowie.jpeg'],
         description: "Cuchillo de 20CM producido con material de disco de arado. Cabo de madera con detalles de acero inoxidable.",
         price: "$5000ars",
-        stock: 4,
+        stock: 7,
         id: 1,
+        idCategory: 'utensilios',
     },
     {
         name: "Delantal de cocina",
@@ -14,6 +15,7 @@ const dataFromDB = [
         price: "$4000ars",
         stock: 4,
         id:2,
+        idCategory: 'indumentaria',
     },
     {
         name: "Provoletera",
@@ -22,6 +24,7 @@ const dataFromDB = [
         price: "$3500ars",
         stock: 4,
         id:3,
+        idCategory: 'accesorios',
     },
     {
         name: "Sacacorchos",
@@ -30,6 +33,7 @@ const dataFromDB = [
         price: "$2000ars",
         stock: 4,
         id:4,
+        idCategory: 'accesorios',
     },
 ];
 

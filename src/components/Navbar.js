@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../App.css'; 
 import CartWidget from './CartWidget';
 
@@ -6,11 +6,16 @@ const Navbar = () =>{
     return (
         <div>
         <header>
-            <h1><link to='/'>Fuego Sagrado</link></h1>
+            <h1>
+                <Link to={`/`}>Fuego Sagrado</Link>
+            </h1>
         </header>
         <nav> 
-            <a><link to='/'> Catalogo </link></a>
-            <a href="#">
+            <Link to={`/`}> Catalogo completo </Link>
+            <Link to={`/category/indumentaria`}> Indumentaria </Link>
+            <Link to={`/category/accesorios`}> Accesorios </Link>
+            <Link to={`/category/utensilios`}> Utensilios  </Link>
+            <a>
                 <CartWidget />
             </a>
         </nav>

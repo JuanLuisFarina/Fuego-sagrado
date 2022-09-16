@@ -2,7 +2,7 @@ import { useState } from "react";
 
 
 
-const ItemCount = ({stock = 4}) => {
+const ItemCount = ({stock = 1}) => {
     const [unit, setUnits] = useState(1);
 
     const increment = () => {
