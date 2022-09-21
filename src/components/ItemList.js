@@ -14,7 +14,7 @@ const ItemList = ({ data }) => {
           />
         ))
       ) : (
-        <p>Cargando...</p>
+        <p className="loading">Cargando...</p>
       )}
     </>
   );

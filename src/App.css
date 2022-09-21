@@ -1,34 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
-
+*{
+  background-color: black;
+  font-family: 'Cinzel', serif;
+  color: #c90;
+}
 header{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
 }
 h1{
-  font-family: 'Cinzel', serif;
-  color: #c90;
   font-weight: 900;
   font-size: xx-large;
 }
 nav{
-  background-color: black;
   display: flex;
   justify-content: space-around;
 }
 a{
   text-decoration: none;
-  color: #c90;
-  font-family: 'Cinzel', serif;
   font-weight: 900;
   margin-bottom: 10px;
 }
+.header{
+  position: fixed;
+  width: 100%;
+}
+.body{padding-top: 10%;}
 .Item{
-  font-family: 'Cinzel', serif;
-  color: #c90;
-  background-color: #333333;
-  /* margin-top: 200px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,13 +37,13 @@ a{
   display: flex;
   flex-direction: row;
 }
-/* .button button{
-  hei
-} */
 button{
-  font-family: 'Cinzel', serif;
-  background-color: #333333;
-  color: #c90;
   border: none;
   font-size: large;
+}
+.detail{
+  text-decoration: underline;
+}
+.cart{
+  text-decoration: underline;
 }

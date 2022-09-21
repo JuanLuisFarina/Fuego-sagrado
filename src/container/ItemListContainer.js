@@ -1,34 +1,3 @@
-// import { useEffect, useState } from "react";
-// import Item from "../components/Item";
-// import dataFromDB from "../Utils/Products";
-// import CustomFetch from "../Utils/CustomFetch";
-
-
-// const ItemListContainer = () => {
-//     const [data, setData] = useState([]);
-//     useEffect(() => {
-//     CustomFetch(2000, dataFromDB)
-//         .then((dataFromDB) => setData(dataFromDB))
-//         .catch((err) => console.log(err));
-//     }, []);
-
-//         return (
-//             <>
-//                 {
-//                 data.map(product => (
-//                     <Item
-//                     key={product.id}
-//                     name={product.name}
-//                     img={product.img}
-//                     price={product.price}
-//                     />              
-//                     ))
-//                 }
-//             </>
-//         )    
-// }
-
-// export default ItemListContainer;
 
 import React, { useEffect, useState } from "react";
 import ItemList from "../components/ItemList";
@@ -54,9 +23,9 @@ const ItemListContainer = () => {
       .catch((err) => console.log(err));
   }, [idCategory]);
   return (
-    <>
+    <div className="body">
       <ItemList data={data} />
-    </>
+    </div>
   );
 };
 
