@@ -23,6 +23,31 @@ const CartContextProvider = ({ children }) => {
         }
     }
 
+    const calcItemsQty = () => {
+        let qtys = cartList.map((item) => item.qtyItem);
+        return qtys.reduce(
+          (previousValue, currentValue) => previousValue + currentValue,
+          0
+        );
+      };
+    
+      const calcTotalPerItem = (idItem) => {
+        let index = cartList.map((item) => item.idItem).indexOf(idItem);
+        return cartList[index].costItem * cartList[index].qtyItem;
+      };
+    
+      const calcSubTotal = () => {
+        let totalPerItem = cartList.map((item) => calcTotalPerItem(item.idItem));
+        return totalPerItem.reduce(
+          (previousValue, currentValue) => previousValue + currentValue,
+          0
+        );
+      };
+    
+      const calcTotal = () => {
+        return calcSubTotal();
+      };
+
     const removeList = () => {
         setCartList([]);
     }
@@ -34,7 +59,16 @@ const CartContextProvider = ({ children }) => {
 
 
     return (
-        <CartContext.Provider value={{cartList, addToCart, removeList, deleteItem}}>
+        <CartContext.Provider value={{
+            cartList,
+            addToCart,
+            removeList,
+            deleteItem,
+            calcItemsQty,
+            calcTotal,
+            calcTotalPerItem,
+            calcSubTotal,
+        }}>
             { children }
         </CartContext.Provider>
     );

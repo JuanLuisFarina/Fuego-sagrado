@@ -26,7 +26,8 @@ a{
   position: fixed;
   width: 100%;
 }
-.body{padding-top: 10%;}
+.body{padding-top: 10%;
+}
 .Item{
   display: flex;
   flex-direction: column;
@@ -46,4 +47,10 @@ button{
 }
 .cart{
   text-decoration: underline;
+}
+.cartcontext{
+  padding-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

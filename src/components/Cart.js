@@ -9,14 +9,14 @@ const Cart = () => {
     const test = useContext(CartContext);
 
     return (
-        <div>
-            <h1>YOUR CART</h1>
+        <div className='cartcontext'>
+            <h1>Carrito</h1>
             <div>
-                <Link to='/'><button>CONTINUE SHOPPING</button></Link>
+            <Link to='/'><button>Ir al catalogo</button></Link> 
                 {
                     (test.cartList.length > 0)
-                    ? <button onClick={test.removeList}>DELETE ALL PRODUCTS</button>
-                    : <span>Your cart is empty</span>
+                    ?<button onClick={test.removeList}>Borrar todo</button>
+                    : <span>El carrito esta vacio</span>
                 }
             </div>
             <div>
@@ -30,20 +30,22 @@ const Cart = () => {
                             <span>
                                 <b>Product:</b> {item.nameItem}
                             </span>
-                            <button onClick={() => test.deleteItem(item.idItem)}>DELETE</button>
+                            <button onClick={() => test.deleteItem(item.idItem)}>Borrar</button>
                             </div>
                         </div>
                         <div>
                             <div>
-                            <div>{item.qtyItem} item(s)</div>
+                                <div>{item.qtyItem} item(s)</div>
                             </div>
-                            <div>$ {item.costItem} each</div>
+                                <div>$ {item.costItem} C/U</div>
                         </div>
+                        <div>$ {test.calcTotalPerItem(item.idItem)}</div>
                         </div>
                         )
                         : <h1></h1>
                     }
             </div>
+            <h3>Total: $ {test.calcSubTotal()} </h3>
         </div>
     );
 }
