@@ -1,9 +1,14 @@
 
 import React, { useEffect, useState } from "react";
 import ItemList from "../components/ItemList";
-import CustomFetch from "../Utils/CustomFetch";
-import dataFromDB from "../Utils/Products";
+// import CustomFetch from "../Utils/CustomFetch";
+// import dataFromDB from "../Utils/Products";
 import { useParams } from "react-router";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../Utils/firebaseConfig";
+import { firestoreFetch } from "../Utils/firestoreFetch";
+
+
 
 const ItemListContainer = () => {
   const [data, setDatos] = useState([]);
@@ -12,13 +17,7 @@ const ItemListContainer = () => {
   console.log(idCategory);
 
   useEffect(() => {
-    CustomFetch(
-      2000,
-      dataFromDB.filter((item) => {
-        if (idCategory === undefined) return item;
-        return item.idCategory === idCategory;
-      })
-    )
+    firestoreFetch(idCategory)
       .then((result) => setDatos(result))
       .catch((err) => console.log(err));
   }, [idCategory]);
