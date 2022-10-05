@@ -13,7 +13,7 @@ import {
     if (idCategory) {
       q = query(collection(db, "products"), where("idCategory", "==", idCategory));
     } else {
-      q = query(collection(db, "products"), orderBy("name"));
+      q = query(collection(db, "products"));
     }
     const querySnapshot = await getDocs(q);
     const dataFromFirestore = querySnapshot.docs.map((document) => ({

@@ -3,10 +3,53 @@ import { useContext, useEffect } from 'react';
 import { CartContext } from './CartContext';
 
 
+import { collection, doc, setDoc, serverTimestamp, updateDoc, increment } from "firebase/firestore";
+import {db} from '../Utils/firebaseConfig';
 
 
 const Cart = () => {
     const test = useContext(CartContext);
+
+  const createOrder = () => {
+    const itemsForDB = test.cartList.map(item => ({
+      id: item.idItem,
+      title: item.nameItem,
+      price: item.costItem
+    }));
+
+    test.cartList.forEach(async (item) => {
+      const itemRef = doc(db, "products", item.idItem);
+      await updateDoc(itemRef, {
+        stock: increment(-item.qtyItem)
+      });
+    });
+
+    let order = {
+      buyer: {
+        name: "Pulga Rodriguez",
+        email: "PulgaR@gmail.com",
+        phone: "123456789"
+      },
+      total: test.calcTotal(),
+      items: itemsForDB,
+      date: serverTimestamp()
+    };
+
+    console.log(order);
+
+    const createOrderInFirestore = async () => {
+      const newOrderRef = doc(collection(db, "orders"));
+      await setDoc(newOrderRef, order);
+      return newOrderRef;
+    }
+
+    createOrderInFirestore()
+      .then(result => alert('Orden creada. Toma nota del ID de tu orden.\n\n\nOrder ID: ' + result.id + '\n\n'))
+      .catch(err => console.log(err));
+
+    test.removeList();
+
+  }
 
     return (
         <div className='cartcontext'>
@@ -46,6 +89,7 @@ const Cart = () => {
                     }
             </div>
             <h3>Total: $ {test.calcSubTotal()} </h3>
+            <button onClick={createOrder}>CHECKOUT NOW</button>
         </div>
     );
 }
