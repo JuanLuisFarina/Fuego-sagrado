@@ -54,13 +54,13 @@ const Cart = () => {
     return (
         <div className='cartcontext'>
             <h1>Carrito</h1>
-            <div>
-            <Link to='/'><button>Ir al catalogo</button></Link> 
+            <div className='cart'>
                 {
                     (test.cartList.length > 0)
                     ?<button onClick={test.removeList}>Borrar todo</button>
                     : <span>El carrito esta vacio</span>
                 }
+                <Link to='/'><button>Ir al catalogo</button></Link> 
             </div>
             <div>
                     {
@@ -82,14 +82,14 @@ const Cart = () => {
                             </div>
                                 <div>$ {item.costItem} C/U</div>
                         </div>
-                        <div>$ {test.calcTotalPerItem(item.idItem)}</div>
+                        <div>$ {test.calcTotalPerItem(item.idItem)} valor total</div>
                         </div>
                         )
                         : <h1></h1>
                     }
             </div>
             <h3>Total: $ {test.calcSubTotal()} </h3>
-            <button onClick={createOrder}>CHECKOUT NOW</button>
+            <button onClick={createOrder}>Finalizar compra</button>
         </div>
     );
 }

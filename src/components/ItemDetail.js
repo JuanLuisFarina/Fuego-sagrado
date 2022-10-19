@@ -27,7 +27,7 @@ const ItemDetail = ({item}) =>{
         ) : (
         <div>
             <Link to="/cart">
-            <button>CheckOut</button>
+            <button>Ir al carrito</button>
             </Link>
         </div>
         
